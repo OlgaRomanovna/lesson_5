@@ -4,7 +4,7 @@ from selene import browser, have
 
 
 def test_filling_form():
-    browser.open("https://demoqa.com/automation-practice-form")
+    browser.open("/automation-practice-form")
     browser.element("#firstName").type("Olga")
     browser.element("#lastName").type("N")
     browser.element("#userEmail").type("olgaN@mail.ru")
@@ -41,33 +41,33 @@ def test_filling_form():
     browser.element(".modal-title").should(
         have.exact_text("Thanks for submitting the form")
     )
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Student Name"]/following-sibling::td'
-    ).should(have.text("Olga N"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Student Email"]/following-sibling::td'
-    ).should(have.text("olgaN@mail.ru"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Gender"]/following-sibling::td'
-    ).should(have.text("Female"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Mobile"]/following-sibling::td'
-    ).should(have.text("9999999999"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Date of Birth"]/following-sibling::td'
-    ).should(have.text("09 April,1995"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Subjects"]/following-sibling::td'
-    ).should(have.text("Biology"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Hobbies"]/following-sibling::td'
-    ).should(have.text("Reading"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Picture"]/following-sibling::td'
-    ).should(have.text("cat.jpeg"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="Address"]/following-sibling::td'
-    ).should(have.text("Krasnodar"))
-    browser.element(
-        '//div[@class="modal-body"]//td[text()="State and City"]/following-sibling::td'
-    ).should(have.text("Haryana Karnal"))
+    browser.element("table > tbody > tr:nth-child(1) > td:nth-child(2)").should(
+        have.text("Olga N")
+    )
+    browser.element("table > tbody > tr:nth-child(2) > td:nth-child(2)").should(
+        have.text("olgaN@mail.ru")
+    )
+    browser.element("table > tbody > tr:nth-child(3) > td:nth-child(2)").should(
+        have.text("Female")
+    )
+    browser.element("table > tbody > tr:nth-child(4) > td:nth-child(2)").should(
+        have.text("9999999999")
+    )
+    browser.element("table > tbody > tr:nth-child(5) > td:nth-child(2)").should(
+        have.text("09 April,1995")
+    )
+    browser.element("table > tbody > tr:nth-child(6) > td:nth-child(2)").should(
+        have.text("Biology")
+    )
+    browser.element("table > tbody > tr:nth-child(7) > td:nth-child(2)").should(
+        have.text("Reading")
+    )
+    browser.element("table > tbody > tr:nth-child(8) > td:nth-child(2)").should(
+        have.text("cat.jpeg")
+    )
+    browser.element("table > tbody > tr:nth-child(9) > td:nth-child(2)").should(
+        have.text("Krasnodar")
+    )
+    browser.element("table > tbody > tr:nth-child(10) > td:nth-child(2)").should(
+        have.text("Haryana Karnal")
+    )
